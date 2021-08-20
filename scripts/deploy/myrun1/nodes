@@ -1,0 +1,34 @@
+[node_ohio]
+18.222.14.149
+
+[node_seoul]
+13.125.130.47
+
+[node_tokyo]
+18.183.228.212
+
+[nodes_setup:children]
+node_ohio
+node_seoul
+node_tokyo
+
+[nodes_ohio]
+replica0 ansible_host=18.222.14.149 host_idx=0 extra_conf=hotstuff.gen-sec0.conf
+
+[nodes_seoul]
+replica1 ansible_host=13.125.130.47 host_idx=0 extra_conf=hotstuff.gen-sec1.conf
+
+[nodes_tokyo]
+replica2 ansible_host=18.183.228.212 host_idx=0 extra_conf=hotstuff.gen-sec2.conf
+
+[nodes:children]
+nodes_ohio
+nodes_seoul
+nodes_tokyo
+
+
+[clients]
+client0 ansible_host=18.222.14.149 host_idx=1 cid=0
+client1 ansible_host=13.125.130.47 host_idx=2 cid=1
+client2 ansible_host=18.183.228.212 host_idx=3 cid=2
+client3 ansible_host= host_idx=4 cid=3

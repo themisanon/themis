@@ -1,0 +1,1 @@
+./faulty_leader_demo.sh: line 15: ./examples/hotstuff-app: No such file or directory
